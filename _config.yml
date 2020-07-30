@@ -12,6 +12,7 @@ defaults:
     values:
       image: true
 
+# theme: jekyll-theme-minimalism
 remote_theme: showzeng/Minimalism
 
 # --- 网站信息设置 ---
