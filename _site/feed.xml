@@ -2,9 +2,698 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
 	<channel>
 		<title>2M</title>
-		<description>123456.</description>
+		<description>var me = new Person();while(me.awake()) me.code();</description>
 		<link>http://localhost:4000</link>
 		<atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
+		
+			<item>
+				<title>Markdown 语法及渲染</title>
+				
+				<description>&lt;h2 id=&quot;说明&quot;&gt;说明&lt;/h2&gt;
+
+&lt;p&gt;Jekyll 默认使用 &lt;a href=&quot;https://github.com/gettalong/kramdown&quot;&gt;kramdown&lt;/a&gt; 来渲染 markdown 类型文件，在 Minimalism 主题中也是使用其默认配置，但在其渲染的基础上自定义了自己的样式，主要参考了 GitHub 的渲染风格。&lt;/p&gt;
+
+&lt;h2 id=&quot;markdown-基本语法&quot;&gt;Markdown 基本语法&lt;/h2&gt;
+
+&lt;p&gt;:stuck_out_tongue: 可能 Markdown 的基本语法大家都很熟悉了，这里主要还是想展示一下主题对各种格式的渲染效果，况且日常写作中，通常也不会全用得上。&lt;/p&gt;
+
+&lt;h3 id=&quot;1-斜体和粗体&quot;&gt;1. 斜体和粗体&lt;/h3&gt;
+
+&lt;p&gt;使用 * 和 ** 表示斜体和粗体。&lt;/p&gt;
+
+&lt;p&gt;示例：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;这是 *斜体*，这是 **粗体**。
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;效果：&lt;/p&gt;
+
+&lt;p&gt;这是 &lt;em&gt;斜体&lt;/em&gt;，这是 &lt;strong&gt;粗体&lt;/strong&gt;。&lt;/p&gt;
+
+&lt;h3 id=&quot;2-分级标题&quot;&gt;2. 分级标题&lt;/h3&gt;
+
+&lt;p&gt;标题分 6 级，在行首加 &lt;code class=&quot;highlighter-rouge&quot;&gt;#&lt;/code&gt; 以表示不同级别的标题 (H1-H6)，例如：# H1, ## H2, ### H3，#### H4，常用的标题主要就是 1 ~ 3 级，往后标题基本同加粗的效果差不多了。&lt;/p&gt;
+
+&lt;p&gt;示例：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# 一级标题
+
+## 二级标题
+
+### 三级标题
+
+#### 四级标题
+
+##### 五级标题
+
+###### 六级标题
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;效果：&lt;/p&gt;
+
+&lt;h1 id=&quot;一级标题&quot;&gt;一级标题&lt;/h1&gt;
+
+&lt;h2 id=&quot;二级标题&quot;&gt;二级标题&lt;/h2&gt;
+
+&lt;h3 id=&quot;三级标题&quot;&gt;三级标题&lt;/h3&gt;
+
+&lt;h4 id=&quot;四级标题&quot;&gt;四级标题&lt;/h4&gt;
+
+&lt;h5 id=&quot;五级标题&quot;&gt;五级标题&lt;/h5&gt;
+
+&lt;h6 id=&quot;六级标题&quot;&gt;六级标题&lt;/h6&gt;
+
+&lt;h3 id=&quot;3-外链接&quot;&gt;3. 外链接&lt;/h3&gt;
+
+&lt;p&gt;使用 [描述](链接地址) 为文章增加外链接。&lt;/p&gt;
+
+&lt;p&gt;示例：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;这是去往 [主题 Minimalism](https://github.com/showzeng/minimalism) 的链接。
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;效果：&lt;/p&gt;
+
+&lt;p&gt;这是去往 &lt;a href=&quot;https://github.com/showzeng/minimalism&quot;&gt;主题 Minimalism&lt;/a&gt; 的链接。&lt;/p&gt;
+
+&lt;p&gt;也可在链接地址后加一个标题，直观效果时鼠标悬停时的文本提示，其语法是链接后加空格和标题文本。&lt;/p&gt;
+
+&lt;p&gt;示例：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;这是去往 [主题 Minimalism](https://github.com/showzeng/minimalism &quot;Minimalism&quot;) 的链接。
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;效果 (鼠标悬停在链接上时触发)：&lt;/p&gt;
+
+&lt;p&gt;这是去往 &lt;a href=&quot;https://github.com/showzeng/minimalism&quot; title=&quot;Minimalism&quot;&gt;主题 Minimalism&lt;/a&gt; 的链接。&lt;/p&gt;
+
+&lt;p&gt;同时外链接还有另一种使用方式，一般是在文末放置链接标注，在文中就直接使用标注。&lt;/p&gt;
+
+&lt;p&gt;示例：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;文末放置 Minimalism 的链接标注：
+[Minimalism]: https://github.com/showzeng/minimalism
+
+文章中直接使用标注替代链接：
+这是我开发的一个新主题 [Minimalism]。
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;效果：&lt;/p&gt;
+
+&lt;p&gt;这是我开发的一个新主题 &lt;a href=&quot;https://github.com/showzeng/minimalism&quot;&gt;Minimalism&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;此外，在使用链接标注时，可以替换需要显示的链接文本。&lt;/p&gt;
+
+&lt;p&gt;示例：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;文末放置 Minimalism 的链接标注：
+[Minimalism]: https://github.com/showzeng/minimalism
+
+文章中直接使用标注替代链接：
+这是我开发的一个新主题 [Minimalism Theme][Minimalism]。
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;效果：&lt;/p&gt;
+
+&lt;p&gt;这是我开发的一个新主题 &lt;a href=&quot;https://github.com/showzeng/minimalism&quot;&gt;Minimalism Theme&lt;/a&gt;。&lt;/p&gt;
+
+&lt;h3 id=&quot;4-无序列表&quot;&gt;4. 无序列表&lt;/h3&gt;
+
+&lt;p&gt;使用 &lt;code class=&quot;highlighter-rouge&quot;&gt;*&lt;/code&gt; / &lt;code class=&quot;highlighter-rouge&quot;&gt;-&lt;/code&gt; / &lt;code class=&quot;highlighter-rouge&quot;&gt;+&lt;/code&gt; 表示无序列表。&lt;/p&gt;
+
+&lt;p&gt;示例：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;* 无序列表项 一
+* 无序列表项 二
+* 无序列表项 三
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;效果：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;无序列表项 一&lt;/li&gt;
+  &lt;li&gt;无序列表项 二&lt;/li&gt;
+  &lt;li&gt;无序列表项 三&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;5-有序列表&quot;&gt;5. 有序列表&lt;/h3&gt;
+
+&lt;p&gt;使用数字和点表示有序列表。&lt;/p&gt;
+
+&lt;p&gt;示例：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;1. 有序列表项 一
+2. 有序列表项 二
+3. 有序列表项 三
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;效果：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;有序列表项 一&lt;/li&gt;
+  &lt;li&gt;有序列表项 二&lt;/li&gt;
+  &lt;li&gt;有序列表项 三&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;6-引用&quot;&gt;6. 引用&lt;/h3&gt;
+
+&lt;p&gt;使用 &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;gt;&lt;/code&gt; 表示引用。&lt;/p&gt;
+
+&lt;p&gt;示例：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt; Less is more. —— 「Andrea del Sarto」
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;效果：&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Less is more. —— 「Andrea del Sarto」&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;当然，引用也可以嵌套使用。&lt;/p&gt;
+
+&lt;p&gt;示例：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt; Less is more. —— 「Andrea del Sarto」
+&amp;gt;&amp;gt; 万物之始，大道至简，衍化至繁。 —— 『道德经』
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;效果：&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Less is more. —— 「Andrea del Sarto」&lt;/p&gt;
+  &lt;blockquote&gt;
+    &lt;p&gt;万物之始，大道至简，衍化至繁。 —— 『道德经』&lt;/p&gt;
+  &lt;/blockquote&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;7-行内代码块&quot;&gt;7. 行内代码块&lt;/h3&gt;
+
+&lt;p&gt;使用 `代码` 表示行内代码块。&lt;/p&gt;
+
+&lt;p&gt;示例：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;让主题 `Minimalism` 成为行内代码块。
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;效果：&lt;/p&gt;
+
+&lt;p&gt;让主题 &lt;code class=&quot;highlighter-rouge&quot;&gt;Minimalism&lt;/code&gt; 成为行内代码块。&lt;/p&gt;
+
+&lt;h3 id=&quot;8-代码块&quot;&gt;8. 代码块&lt;/h3&gt;
+
+&lt;p&gt;使用四个缩进空格表示代码块。&lt;/p&gt;
+
+&lt;p&gt;示例：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    这是一个代码块，此行左侧有四个不可见的空格。
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;效果：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;这是一个代码块，此行左侧有四个不可见的空格。
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;需要指出的是，我并不喜欢和推荐用这种格式来书写，其实这个代码块在主题中就是没有指定代码类型默认的代码块样式 (而指定代码类型使用的是 &lt;a href=&quot;https://prismjs.com/&quot;&gt;Prism&lt;/a&gt; 官网定制的代码渲染主题，你也可以制作你自己的代码渲染主题并替换博客主题的代码渲染主题，具体请参考博客主题定制文章。)，所以，当你想实现一个代码块效果时，推荐如下用法。&lt;/p&gt;
+
+&lt;p&gt;示例：&lt;/p&gt;
+
+&lt;pre class=&quot;highlight&quot;&gt;
+  &lt;code&gt;
+  ```
+  这是一个代码块。
+  ```
+
+  ```text
+  指定代码类型的代码块。
+  ```
+
+  ```java
+  public class HelloWorld {
+
+      public static void main(String[] args) {
+          // Prints &quot;Hello, World&quot; to the terminal window.
+          System.out.println(&quot;Hello, World&quot;);
+      }
+
+  }
+  ```
+  &lt;/code&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;效果：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;这是一个代码块。
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-text highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;指定代码类型的代码块。
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;HelloWorld&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;// Prints &quot;Hello, World&quot; to the terminal window.&lt;/span&gt;
+        &lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Hello, World&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;9-插入图像&quot;&gt;9. 插入图像&lt;/h3&gt;
+
+&lt;p&gt;使用 ![描述](图片链接地址) 插入图像。&lt;/p&gt;
+
+&lt;p&gt;示例：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;![头像](https://www.z4a.net/images/2017/08/31/shortcut_icon.png)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;效果：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://www.z4a.net/images/2017/08/31/shortcut_icon.png&quot; alt=&quot;头像&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;同外链接，图片也可在链接地址后加一个标题，直观效果时鼠标悬停时的文本提示，其语法是链接后加空格和标题文本。&lt;/p&gt;
+
+&lt;p&gt;示例：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;![头像](https://www.z4a.net/images/2017/08/31/shortcut_icon.png &quot;头像&quot;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;效果 (鼠标悬停在头像上时触发)：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://www.z4a.net/images/2017/08/31/shortcut_icon.png&quot; alt=&quot;头像&quot; title=&quot;头像&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;10-分隔符&quot;&gt;10. 分隔符&lt;/h3&gt;
+
+&lt;p&gt;使用 &lt;code class=&quot;highlighter-rouge&quot;&gt;---&lt;/code&gt; 可显示分隔符。&lt;/p&gt;
+
+&lt;p&gt;示例：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;---
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;效果：&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;11-反转义&quot;&gt;11. 反转义&lt;/h3&gt;
+
+&lt;p&gt;使用 &lt;code class=&quot;highlighter-rouge&quot;&gt;\&lt;/code&gt; 可使 Markdown 解析时不会去解析本该属于语法部分的一些符号。&lt;/p&gt;
+
+&lt;p&gt;示例：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;\`代码块\`
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;效果：&lt;/p&gt;
+
+&lt;p&gt;`代码块`&lt;/p&gt;
+
+&lt;h3 id=&quot;12-emoji&quot;&gt;12. Emoji&lt;/h3&gt;
+
+&lt;p&gt;主题同样也支持 Emoji 表情，使用方法很简单。&lt;/p&gt;
+
+&lt;p&gt;示例：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;(Smile) :smile: (Sob) :sob:
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;效果：&lt;/p&gt;
+
+&lt;p&gt;(Smile) :smile: (Sob) :sob:&lt;/p&gt;
+
+&lt;p&gt;Emoji 的代码参考 &lt;a href=&quot;https://www.webfx.com/tools/emoji-cheat-sheet/&quot;&gt;Emoji sheet&lt;/a&gt;。&lt;/p&gt;
+
+&lt;h3 id=&quot;13-段内换行&quot;&gt;13. 段内换行&lt;/h3&gt;
+
+&lt;p&gt;在同一段落里让文本换行，只需在上一行末尾加 2 个空格即可。&lt;/p&gt;
+
+&lt;p&gt;示例：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;这是这个段落的第一行。  
+这是同一个段落的第二行。
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;效果：&lt;/p&gt;
+
+&lt;p&gt;这是这个段落的第一行。&lt;br /&gt;
+这是同一个段落的第二行。&lt;/p&gt;
+
+&lt;h2 id=&quot;markdown-高阶语法&quot;&gt;Markdown 高阶语法&lt;/h2&gt;
+
+&lt;h3 id=&quot;1-删除线&quot;&gt;1. 删除线&lt;/h3&gt;
+
+&lt;p&gt;使用 &lt;code class=&quot;highlighter-rouge&quot;&gt;~~&lt;/code&gt; 表示删除线。&lt;/p&gt;
+
+&lt;p&gt;示例：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;~~这是一段错误的文本。~~
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;效果：&lt;/p&gt;
+
+&lt;p&gt;&lt;del&gt;这是一段错误的文本。&lt;/del&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;2-注脚&quot;&gt;2. 注脚&lt;/h3&gt;
+
+&lt;p&gt;使用 [^keyword] 表示注脚。&lt;/p&gt;
+
+&lt;p&gt;示例：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;这是第一个注脚 [^footnote1] 的样例。
+
+这是第二个注脚 [^footnote2] 的样例。
+
+对应在文章末尾放置如下，点击效果中的注脚即可跳转至文章末尾的注脚注解。
+
+[^footnote1]: 这是第一个注脚的注解。
+[^footnote2]: 这是第二个注脚的注解。
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;效果：&lt;/p&gt;
+
+&lt;p&gt;这是第一个注脚 &lt;sup id=&quot;fnref:footnote1&quot;&gt;&lt;a href=&quot;#fn:footnote1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; 的样例。&lt;/p&gt;
+
+&lt;p&gt;这是第二个注脚 &lt;sup id=&quot;fnref:footnote2&quot;&gt;&lt;a href=&quot;#fn:footnote2&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt; 的样例。&lt;/p&gt;
+
+&lt;h3 id=&quot;3-加强的代码块&quot;&gt;3. 加强的代码块&lt;/h3&gt;
+
+&lt;p&gt;使用 &lt;a href=&quot;https://prismjs.com/&quot;&gt;Prism&lt;/a&gt; 官网定制的代码高亮主题，选择了所有支持的编程语言，你可以定制你自己的语法主题。&lt;/p&gt;
+
+&lt;p&gt;非代码示例：&lt;/p&gt;
+
+&lt;pre class=&quot;highlight&quot;&gt;
+&lt;code&gt;
+```
+$ sudo pacman -S oh-my-zsh-git
+```
+&lt;/code&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;效果：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ sudo pacman -S oh-my-zsh-git
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Python 示例：&lt;/p&gt;
+
+&lt;pre class=&quot;highlight&quot;&gt;
+&lt;code&gt;
+```python
+@requires_authorization
+def somefunc(param1='', param2=0):
+    '''A docstring'''
+    if param1 &amp;gt; param2: # interesting
+        print 'Greater'
+    return (param2 - param1 + 1) or None
+
+class SomeClass:
+    pass
+
+&amp;gt;&amp;gt;&amp;gt; message = '''interpreter
+... prompt'''
+```
+&lt;/code&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;效果：&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;requires_authorization&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;somefunc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;param1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;''&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;param2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;'''A docstring'''&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;param1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;param2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# interesting
+&lt;/span&gt;        &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'Greater'&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;param2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;param1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;or&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;None&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;SomeClass&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;pass&lt;/span&gt;
+
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;message&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'''interpreter
+... prompt'''&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;JavaScript 示例：&lt;/p&gt;
+
+&lt;pre class=&quot;highlight&quot;&gt;
+&lt;code&gt;
+``` javascript
+/**
+* nth element in the fibonacci series.
+* @param n &amp;gt;= 0
+* @return the nth element, &amp;gt;= 0.
+*/
+function fib(n) {
+  var a = 1, b = 1;
+  var tmp;
+  while (--n &amp;gt;= 0) {
+    tmp = a;
+    a += b;
+    b = tmp;
+  }
+  return a;
+}
+
+document.write(fib(10));
+```
+&lt;/code&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;效果：&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cm&quot;&gt;/**
+* nth element in the fibonacci series.
+* @param n &amp;gt;= 0
+* @return the nth element, &amp;gt;= 0.
+*/&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;fib&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;tmp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;tmp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;tmp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;fib&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;4-表格支持&quot;&gt;4. 表格支持&lt;/h3&gt;
+
+&lt;p&gt;示例：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;| 项目 | 价格 | 数量 |
+| -- | -- | -- |
+| 计算机 | \$1600 | 5 |
+| 手机 | \$12 | 12 |
+| 管线 | \$1 | 234 |
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;效果：&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;项目&lt;/th&gt;
+      &lt;th&gt;价格&lt;/th&gt;
+      &lt;th&gt;数量&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;计算机&lt;/td&gt;
+      &lt;td&gt;$1600&lt;/td&gt;
+      &lt;td&gt;5&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;手机&lt;/td&gt;
+      &lt;td&gt;$12&lt;/td&gt;
+      &lt;td&gt;12&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;管线&lt;/td&gt;
+      &lt;td&gt;$1&lt;/td&gt;
+      &lt;td&gt;234&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;表格中的项默认都是左对齐，使用 &lt;code class=&quot;highlighter-rouge&quot;&gt;:--:&lt;/code&gt; 和 &lt;code class=&quot;highlighter-rouge&quot;&gt;--:&lt;/code&gt; 可设置居中和右对齐。&lt;/p&gt;
+
+&lt;p&gt;示例：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;| 项目 | 价格 | 数量 |
+| -- | :--: | --: |
+| 计算机 | \$1600 | 5 |
+| 手机 | \$12 | 12 |
+| 管线 | \$1 | 234 |
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;效果：&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;项目&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;价格&lt;/th&gt;
+      &lt;th style=&quot;text-align: right&quot;&gt;数量&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;计算机&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;$1600&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;5&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;手机&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;$12&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;12&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;管线&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;$1&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;234&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;5-定义型列表&quot;&gt;5. 定义型列表&lt;/h3&gt;
+
+&lt;p&gt;示例：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;名词 1
+: 定义 1（左侧有一个可见的冒号和空格）
+
+名词 2
+: 定义 2（左侧有一个可见的冒号和空格）
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;效果：&lt;/p&gt;
+
+&lt;dl&gt;
+  &lt;dt&gt;名词 1&lt;/dt&gt;
+  &lt;dd&gt;定义 1（左侧有一个可见的冒号和空格）&lt;/dd&gt;
+  &lt;dt&gt;名词 2&lt;/dt&gt;
+  &lt;dd&gt;定义 2（左侧有一个可见的冒号和空格）&lt;/dd&gt;
+&lt;/dl&gt;
+
+&lt;h3 id=&quot;6-html-标签&quot;&gt;6. Html 标签&lt;/h3&gt;
+
+&lt;p&gt;可在 Markdown 语法中直接嵌套 Html 标签，譬如，你可以用 Html 写一个纵跨两行的表格：&lt;/p&gt;
+
+&lt;p&gt;示例：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;table&amp;gt;
+    &amp;lt;tr&amp;gt;
+        &amp;lt;th rowspan=&quot;2&quot;&amp;gt;值班人员&amp;lt;/th&amp;gt;
+        &amp;lt;th&amp;gt;星期一&amp;lt;/th&amp;gt;
+        &amp;lt;th&amp;gt;星期二&amp;lt;/th&amp;gt;
+        &amp;lt;th&amp;gt;星期三&amp;lt;/th&amp;gt;
+    &amp;lt;/tr&amp;gt;
+    &amp;lt;tr&amp;gt;
+        &amp;lt;td&amp;gt;李强&amp;lt;/td&amp;gt;
+        &amp;lt;td&amp;gt;张明&amp;lt;/td&amp;gt;
+        &amp;lt;td&amp;gt;王平&amp;lt;/td&amp;gt;
+    &amp;lt;/tr&amp;gt;
+&amp;lt;/table&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;效果：&lt;/p&gt;
+
+&lt;table&gt;
+    &lt;tr&gt;
+        &lt;th rowspan=&quot;2&quot;&gt;值班人员&lt;/th&gt;
+        &lt;th&gt;星期一&lt;/th&gt;
+        &lt;th&gt;星期二&lt;/th&gt;
+        &lt;th&gt;星期三&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;李强&lt;/td&gt;
+        &lt;td&gt;张明&lt;/td&gt;
+        &lt;td&gt;王平&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;7-待办事项-todo-列表&quot;&gt;7. 待办事项 Todo 列表&lt;/h3&gt;
+
+&lt;p&gt;使用带有 &lt;code class=&quot;highlighter-rouge&quot;&gt;[ ]&lt;/code&gt; 或 &lt;code class=&quot;highlighter-rouge&quot;&gt;[x]&lt;/code&gt; (未完成或已完成) 项的列表语法撰写一个待办事项列表，并且支持子列表嵌套以及混用Markdown语法。&lt;/p&gt;
+
+&lt;p&gt;示例：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;- [x] **博客改版**
+    - [x] 响应式布局，移动端适配
+    - [ ] 多语言支持
+    - [x] 主页
+    - [x] 文章列表页
+    - [x] 归档页
+    - [x] 关于页
+    - [x] 文章详情页
+        - [x] 排版
+        - [x] Markdown 渲染
+        - [x] 代码高亮，使用 [Prism](https://prismjs.com/)
+        - [ ] Toc 功能
+        - [x] 评论功能
+        - [x] 打赏功能
+
+- [x] **Minimalism 主题发布**
+    - [x] 主题编写
+    - [x] 打包发布
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;效果：&lt;/p&gt;
+
+&lt;ul class=&quot;task-list&quot;&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;&lt;strong&gt;博客改版&lt;/strong&gt;
+    &lt;ul class=&quot;task-list&quot;&gt;
+      &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;响应式布局，移动端适配&lt;/li&gt;
+      &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;多语言支持&lt;/li&gt;
+      &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;主页&lt;/li&gt;
+      &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;文章列表页&lt;/li&gt;
+      &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;归档页&lt;/li&gt;
+      &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;关于页&lt;/li&gt;
+      &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;文章详情页
+        &lt;ul class=&quot;task-list&quot;&gt;
+          &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;排版&lt;/li&gt;
+          &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;Markdown 渲染&lt;/li&gt;
+          &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;代码高亮，使用 &lt;a href=&quot;https://prismjs.com/&quot;&gt;Prism&lt;/a&gt;&lt;/li&gt;
+          &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;Toc 功能&lt;/li&gt;
+          &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;评论功能&lt;/li&gt;
+          &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;打赏功能&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;&lt;strong&gt;Minimalism 主题发布&lt;/strong&gt;
+    &lt;ul class=&quot;task-list&quot;&gt;
+      &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;主题编写&lt;/li&gt;
+      &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;打包发布&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;写在最后&quot;&gt;写在最后&lt;/h2&gt;
+
+&lt;p&gt;本篇博客列举的语法模板部分参考了 &lt;a href=&quot;https://www.zybuluo.com/mdeditor?url=https%3A%2F%2Fwww.zybuluo.com%2Fstatic%2Feditor%2Fmd-help.markdown&quot;&gt;Cmd Markdown 编辑阅读器的语法说明&lt;/a&gt; :+1:，感谢。&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;div class=&quot;footnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:footnote1&quot;&gt;
+      &lt;p&gt;这是第一个注脚的注解。 &lt;a href=&quot;#fnref:footnote1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:footnote2&quot;&gt;
+      &lt;p&gt;这是第二个注脚的注解。 &lt;a href=&quot;#fnref:footnote2&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+</description>
+				<pubDate>Sun, 12 Aug 2018 21:30:23 +0800</pubDate>
+				<link>http://localhost:4000/markdown/2018/08/12/test.html</link>
+				<guid isPermaLink="true">http://localhost:4000/markdown/2018/08/12/test.html</guid>
+			</item>
 		
 	</channel>
 </rss>

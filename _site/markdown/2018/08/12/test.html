@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+        Markdown 语法及渲染
+      
+    </title>
+
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    
+  
+  
+    
+  
+    
+    <link rel="shortcut icon" href="/assets/img/favicon.ico" />
+    <link rel="bookmark" href="/assets/img/favicon.ico" type="image/x-icon" />
+    
+  
+
+
+
+    <link rel="stylesheet" href="/assets/css/post.css">
+    <link rel="stylesheet" href="/assets/css/prism.css">
+    
+    <link rel="stylesheet" href="/assets/css/prism-line-numbers.css">
+    
+    <link rel="stylesheet" href="/assets/css/markdown.css">
+    <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Markdown 语法及渲染 | 2M的博客</title>
+<meta name="generator" content="Jekyll v3.8.7" />
+<meta property="og:title" content="Markdown 语法及渲染" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="本文主要说明一些常用的 Markdown 语法及主题 Minimalism 中的渲染效果。" />
+<meta property="og:description" content="本文主要说明一些常用的 Markdown 语法及主题 Minimalism 中的渲染效果。" />
+<link rel="canonical" href="http://localhost:4000/markdown/2018/08/12/test.html" />
+<meta property="og:url" content="http://localhost:4000/markdown/2018/08/12/test.html" />
+<meta property="og:site_name" content="2M的博客" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-08-12T21:30:23+08:00" />
+<script type="application/ld+json">
+{"headline":"Markdown 语法及渲染","dateModified":"2018-08-12T21:30:23+08:00","datePublished":"2018-08-12T21:30:23+08:00","url":"http://localhost:4000/markdown/2018/08/12/test.html","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/markdown/2018/08/12/test.html"},"description":"本文主要说明一些常用的 Markdown 语法及主题 Minimalism 中的渲染效果。","@type":"BlogPosting","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    
+
+  </head>
+
+  <body>
+    <header>
+      <div class="title">
+  <a href="/articles">
+    
+      Markdown 语法及渲染
+    
+  </a>
+  <span class="title-tip">返回首页</span>
+</div>
+
+      <p id="author" style="display: none">
+        
+        2M
+        
+      </p>
+
+      <div class="article-title-description">
+        <p>发表于 2018-08-12 | 本文共 1390 字</p>
+      </div>
+    </header>
+
+    <div class="page-content">
+  <div class="content" id="post-content">
+    <p></p>
+<h2 id="说明">说明</h2>
+
+<p>Jekyll 默认使用 <a href="https://github.com/gettalong/kramdown">kramdown</a> 来渲染 markdown 类型文件，在 Minimalism 主题中也是使用其默认配置，但在其渲染的基础上自定义了自己的样式，主要参考了 GitHub 的渲染风格。</p>
+
+<h2 id="markdown-基本语法">Markdown 基本语法</h2>
+
+<p><img class="emoji" title=":stuck_out_tongue:" alt=":stuck_out_tongue:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f61b.png" height="20" width="20"> 可能 Markdown 的基本语法大家都很熟悉了，这里主要还是想展示一下主题对各种格式的渲染效果，况且日常写作中，通常也不会全用得上。</p>
+
+<h3 id="1-斜体和粗体">1. 斜体和粗体</h3>
+
+<p>使用 * 和 ** 表示斜体和粗体。</p>
+
+<p>示例：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>这是 *斜体*，这是 **粗体**。
+</code></pre></div></div>
+
+<p>效果：</p>
+
+<p>这是 <em>斜体</em>，这是 <strong>粗体</strong>。</p>
+
+<h3 id="2-分级标题">2. 分级标题</h3>
+
+<p>标题分 6 级，在行首加 <code class="highlighter-rouge">#</code> 以表示不同级别的标题 (H1-H6)，例如：# H1, ## H2, ### H3，#### H4，常用的标题主要就是 1 ~ 3 级，往后标题基本同加粗的效果差不多了。</p>
+
+<p>示例：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># 一级标题
+
+## 二级标题
+
+### 三级标题
+
+#### 四级标题
+
+##### 五级标题
+
+###### 六级标题
+</code></pre></div></div>
+
+<p>效果：</p>
+
+<h1 id="一级标题">一级标题</h1>
+
+<h2 id="二级标题">二级标题</h2>
+
+<h3 id="三级标题">三级标题</h3>
+
+<h4 id="四级标题">四级标题</h4>
+
+<h5 id="五级标题">五级标题</h5>
+
+<h6 id="六级标题">六级标题</h6>
+
+<h3 id="3-外链接">3. 外链接</h3>
+
+<p>使用 [描述](链接地址) 为文章增加外链接。</p>
+
+<p>示例：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>这是去往 [主题 Minimalism](https://github.com/showzeng/minimalism) 的链接。
+</code></pre></div></div>
+
+<p>效果：</p>
+
+<p>这是去往 <a href="https://github.com/showzeng/minimalism">主题 Minimalism</a> 的链接。</p>
+
+<p>也可在链接地址后加一个标题，直观效果时鼠标悬停时的文本提示，其语法是链接后加空格和标题文本。</p>
+
+<p>示例：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>这是去往 [主题 Minimalism](https://github.com/showzeng/minimalism "Minimalism") 的链接。
+</code></pre></div></div>
+
+<p>效果 (鼠标悬停在链接上时触发)：</p>
+
+<p>这是去往 <a href="https://github.com/showzeng/minimalism" title="Minimalism">主题 Minimalism</a> 的链接。</p>
+
+<p>同时外链接还有另一种使用方式，一般是在文末放置链接标注，在文中就直接使用标注。</p>
+
+<p>示例：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>文末放置 Minimalism 的链接标注：
+[Minimalism]: https://github.com/showzeng/minimalism
+
+文章中直接使用标注替代链接：
+这是我开发的一个新主题 [Minimalism]。
+</code></pre></div></div>
+
+<p>效果：</p>
+
+<p>这是我开发的一个新主题 <a href="https://github.com/showzeng/minimalism">Minimalism</a>。</p>
+
+<p>此外，在使用链接标注时，可以替换需要显示的链接文本。</p>
+
+<p>示例：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>文末放置 Minimalism 的链接标注：
+[Minimalism]: https://github.com/showzeng/minimalism
+
+文章中直接使用标注替代链接：
+这是我开发的一个新主题 [Minimalism Theme][Minimalism]。
+</code></pre></div></div>
+
+<p>效果：</p>
+
+<p>这是我开发的一个新主题 <a href="https://github.com/showzeng/minimalism">Minimalism Theme</a>。</p>
+
+<h3 id="4-无序列表">4. 无序列表</h3>
+
+<p>使用 <code class="highlighter-rouge">*</code> / <code class="highlighter-rouge">-</code> / <code class="highlighter-rouge">+</code> 表示无序列表。</p>
+
+<p>示例：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>* 无序列表项 一
+* 无序列表项 二
+* 无序列表项 三
+</code></pre></div></div>
+
+<p>效果：</p>
+
+<ul>
+  <li>无序列表项 一</li>
+  <li>无序列表项 二</li>
+  <li>无序列表项 三</li>
+</ul>
+
+<h3 id="5-有序列表">5. 有序列表</h3>
+
+<p>使用数字和点表示有序列表。</p>
+
+<p>示例：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1. 有序列表项 一
+2. 有序列表项 二
+3. 有序列表项 三
+</code></pre></div></div>
+
+<p>效果：</p>
+
+<ol>
+  <li>有序列表项 一</li>
+  <li>有序列表项 二</li>
+  <li>有序列表项 三</li>
+</ol>
+
+<h3 id="6-引用">6. 引用</h3>
+
+<p>使用 <code class="highlighter-rouge">&gt;</code> 表示引用。</p>
+
+<p>示例：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; Less is more. —— 「Andrea del Sarto」
+</code></pre></div></div>
+
+<p>效果：</p>
+
+<blockquote>
+  <p>Less is more. —— 「Andrea del Sarto」</p>
+</blockquote>
+
+<p>当然，引用也可以嵌套使用。</p>
+
+<p>示例：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; Less is more. —— 「Andrea del Sarto」
+&gt;&gt; 万物之始，大道至简，衍化至繁。 —— 『道德经』
+</code></pre></div></div>
+
+<p>效果：</p>
+
+<blockquote>
+  <p>Less is more. —— 「Andrea del Sarto」</p>
+  <blockquote>
+    <p>万物之始，大道至简，衍化至繁。 —— 『道德经』</p>
+  </blockquote>
+</blockquote>
+
+<h3 id="7-行内代码块">7. 行内代码块</h3>
+
+<p>使用 `代码` 表示行内代码块。</p>
+
+<p>示例：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>让主题 `Minimalism` 成为行内代码块。
+</code></pre></div></div>
+
+<p>效果：</p>
+
+<p>让主题 <code class="highlighter-rouge">Minimalism</code> 成为行内代码块。</p>
+
+<h3 id="8-代码块">8. 代码块</h3>
+
+<p>使用四个缩进空格表示代码块。</p>
+
+<p>示例：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    这是一个代码块，此行左侧有四个不可见的空格。
+</code></pre></div></div>
+
+<p>效果：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>这是一个代码块，此行左侧有四个不可见的空格。
+</code></pre></div></div>
+
+<p>需要指出的是，我并不喜欢和推荐用这种格式来书写，其实这个代码块在主题中就是没有指定代码类型默认的代码块样式 (而指定代码类型使用的是 <a href="https://prismjs.com/">Prism</a> 官网定制的代码渲染主题，你也可以制作你自己的代码渲染主题并替换博客主题的代码渲染主题，具体请参考博客主题定制文章。)，所以，当你想实现一个代码块效果时，推荐如下用法。</p>
+
+<p>示例：</p>
+
+<pre class="highlight">
+  <code>
+  ```
+  这是一个代码块。
+  ```
+
+  ```text
+  指定代码类型的代码块。
+  ```
+
+  ```java
+  public class HelloWorld {
+
+      public static void main(String[] args) {
+          // Prints "Hello, World" to the terminal window.
+          System.out.println("Hello, World");
+      }
+
+  }
+  ```
+  </code>
+</pre>
+
+<p>效果：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>这是一个代码块。
+</code></pre></div></div>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>指定代码类型的代码块。
+</code></pre></div></div>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">HelloWorld</span> <span class="o">{</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">// Prints "Hello, World" to the terminal window.</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Hello, World"</span><span class="o">);</span>
+    <span class="o">}</span>
+
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h3 id="9-插入图像">9. 插入图像</h3>
+
+<p>使用 ![描述](图片链接地址) 插入图像。</p>
+
+<p>示例：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>![头像](https://www.z4a.net/images/2017/08/31/shortcut_icon.png)
+</code></pre></div></div>
+
+<p>效果：</p>
+
+<p><img src="https://www.z4a.net/images/2017/08/31/shortcut_icon.png" alt="头像"></p>
+
+<p>同外链接，图片也可在链接地址后加一个标题，直观效果时鼠标悬停时的文本提示，其语法是链接后加空格和标题文本。</p>
+
+<p>示例：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>![头像](https://www.z4a.net/images/2017/08/31/shortcut_icon.png "头像")
+</code></pre></div></div>
+
+<p>效果 (鼠标悬停在头像上时触发)：</p>
+
+<p><img src="https://www.z4a.net/images/2017/08/31/shortcut_icon.png" alt="头像" title="头像"></p>
+
+<h3 id="10-分隔符">10. 分隔符</h3>
+
+<p>使用 <code class="highlighter-rouge">---</code> 可显示分隔符。</p>
+
+<p>示例：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
+</code></pre></div></div>
+
+<p>效果：</p>
+
+<hr>
+
+<h3 id="11-反转义">11. 反转义</h3>
+
+<p>使用 <code class="highlighter-rouge">\</code> 可使 Markdown 解析时不会去解析本该属于语法部分的一些符号。</p>
+
+<p>示例：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>\`代码块\`
+</code></pre></div></div>
+
+<p>效果：</p>
+
+<p>`代码块`</p>
+
+<h3 id="12-emoji">12. Emoji</h3>
+
+<p>主题同样也支持 Emoji 表情，使用方法很简单。</p>
+
+<p>示例：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(Smile) :smile: (Sob) :sob:
+</code></pre></div></div>
+
+<p>效果：</p>
+
+<p>(Smile) <img class="emoji" title=":smile:" alt=":smile:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f604.png" height="20" width="20"> (Sob) <img class="emoji" title=":sob:" alt=":sob:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f62d.png" height="20" width="20"></p>
+
+<p>Emoji 的代码参考 <a href="https://www.webfx.com/tools/emoji-cheat-sheet/">Emoji sheet</a>。</p>
+
+<h3 id="13-段内换行">13. 段内换行</h3>
+
+<p>在同一段落里让文本换行，只需在上一行末尾加 2 个空格即可。</p>
+
+<p>示例：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>这是这个段落的第一行。  
+这是同一个段落的第二行。
+</code></pre></div></div>
+
+<p>效果：</p>
+
+<p>这是这个段落的第一行。<br>
+这是同一个段落的第二行。</p>
+
+<h2 id="markdown-高阶语法">Markdown 高阶语法</h2>
+
+<h3 id="1-删除线">1. 删除线</h3>
+
+<p>使用 <code class="highlighter-rouge">~~</code> 表示删除线。</p>
+
+<p>示例：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~~这是一段错误的文本。~~
+</code></pre></div></div>
+
+<p>效果：</p>
+
+<p><del>这是一段错误的文本。</del></p>
+
+<h3 id="2-注脚">2. 注脚</h3>
+
+<p>使用 [^keyword] 表示注脚。</p>
+
+<p>示例：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>这是第一个注脚 [^footnote1] 的样例。
+
+这是第二个注脚 [^footnote2] 的样例。
+
+对应在文章末尾放置如下，点击效果中的注脚即可跳转至文章末尾的注脚注解。
+
+[^footnote1]: 这是第一个注脚的注解。
+[^footnote2]: 这是第二个注脚的注解。
+</code></pre></div></div>
+
+<p>效果：</p>
+
+<p>这是第一个注脚 <sup id="fnref:footnote1"><a href="#fn:footnote1" class="footnote">1</a></sup> 的样例。</p>
+
+<p>这是第二个注脚 <sup id="fnref:footnote2"><a href="#fn:footnote2" class="footnote">2</a></sup> 的样例。</p>
+
+<h3 id="3-加强的代码块">3. 加强的代码块</h3>
+
+<p>使用 <a href="https://prismjs.com/">Prism</a> 官网定制的代码高亮主题，选择了所有支持的编程语言，你可以定制你自己的语法主题。</p>
+
+<p>非代码示例：</p>
+
+<pre class="highlight">
+<code>
+```
+$ sudo pacman -S oh-my-zsh-git
+```
+</code>
+</pre>
+
+<p>效果：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo pacman -S oh-my-zsh-git
+</code></pre></div></div>
+
+<p>Python 示例：</p>
+
+<pre class="highlight">
+<code>
+```python
+@requires_authorization
+def somefunc(param1='', param2=0):
+    '''A docstring'''
+    if param1 &gt; param2: # interesting
+        print 'Greater'
+    return (param2 - param1 + 1) or None
+
+class SomeClass:
+    pass
+
+&gt;&gt;&gt; message = '''interpreter
+... prompt'''
+```
+</code>
+</pre>
+
+<p>效果：</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">@</span><span class="n">requires_authorization</span>
+<span class="k">def</span> <span class="nf">somefunc</span><span class="p">(</span><span class="n">param1</span><span class="o">=</span><span class="s">''</span><span class="p">,</span> <span class="n">param2</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    <span class="s">'''A docstring'''</span>
+    <span class="k">if</span> <span class="n">param1</span> <span class="o">&gt;</span> <span class="n">param2</span><span class="p">:</span> <span class="c1"># interesting
+</span>        <span class="k">print</span> <span class="s">'Greater'</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">param2</span> <span class="o">-</span> <span class="n">param1</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="ow">or</span> <span class="bp">None</span>
+
+<span class="k">class</span> <span class="nc">SomeClass</span><span class="p">:</span>
+    <span class="k">pass</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">message</span> <span class="o">=</span> <span class="s">'''interpreter
+... prompt'''</span>
+</code></pre></div></div>
+
+<p>JavaScript 示例：</p>
+
+<pre class="highlight">
+<code>
+``` javascript
+/**
+* nth element in the fibonacci series.
+* @param n &gt;= 0
+* @return the nth element, &gt;= 0.
+*/
+function fib(n) {
+  var a = 1, b = 1;
+  var tmp;
+  while (--n &gt;= 0) {
+    tmp = a;
+    a += b;
+    b = tmp;
+  }
+  return a;
+}
+
+document.write(fib(10));
+```
+</code>
+</pre>
+
+<p>效果：</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/**
+* nth element in the fibonacci series.
+* @param n &gt;= 0
+* @return the nth element, &gt;= 0.
+*/</span>
+<span class="kd">function</span> <span class="nx">fib</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">b</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+  <span class="kd">var</span> <span class="nx">tmp</span><span class="p">;</span>
+  <span class="k">while</span> <span class="p">(</span><span class="o">--</span><span class="nx">n</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">tmp</span> <span class="o">=</span> <span class="nx">a</span><span class="p">;</span>
+    <span class="nx">a</span> <span class="o">+=</span> <span class="nx">b</span><span class="p">;</span>
+    <span class="nx">b</span> <span class="o">=</span> <span class="nx">tmp</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">a</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">fib</span><span class="p">(</span><span class="mi">10</span><span class="p">));</span>
+</code></pre></div></div>
+
+<h3 id="4-表格支持">4. 表格支持</h3>
+
+<p>示例：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>| 项目 | 价格 | 数量 |
+| -- | -- | -- |
+| 计算机 | \$1600 | 5 |
+| 手机 | \$12 | 12 |
+| 管线 | \$1 | 234 |
+</code></pre></div></div>
+
+<p>效果：</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>项目</th>
+      <th>价格</th>
+      <th>数量</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>计算机</td>
+      <td>$1600</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td>手机</td>
+      <td>$12</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <td>管线</td>
+      <td>$1</td>
+      <td>234</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>表格中的项默认都是左对齐，使用 <code class="highlighter-rouge">:--:</code> 和 <code class="highlighter-rouge">--:</code> 可设置居中和右对齐。</p>
+
+<p>示例：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>| 项目 | 价格 | 数量 |
+| -- | :--: | --: |
+| 计算机 | \$1600 | 5 |
+| 手机 | \$12 | 12 |
+| 管线 | \$1 | 234 |
+</code></pre></div></div>
+
+<p>效果：</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>项目</th>
+      <th style="text-align: center">价格</th>
+      <th style="text-align: right">数量</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>计算机</td>
+      <td style="text-align: center">$1600</td>
+      <td style="text-align: right">5</td>
+    </tr>
+    <tr>
+      <td>手机</td>
+      <td style="text-align: center">$12</td>
+      <td style="text-align: right">12</td>
+    </tr>
+    <tr>
+      <td>管线</td>
+      <td style="text-align: center">$1</td>
+      <td style="text-align: right">234</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="5-定义型列表">5. 定义型列表</h3>
+
+<p>示例：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>名词 1
+: 定义 1（左侧有一个可见的冒号和空格）
+
+名词 2
+: 定义 2（左侧有一个可见的冒号和空格）
+</code></pre></div></div>
+
+<p>效果：</p>
+
+<dl>
+  <dt>名词 1</dt>
+  <dd>定义 1（左侧有一个可见的冒号和空格）</dd>
+  <dt>名词 2</dt>
+  <dd>定义 2（左侧有一个可见的冒号和空格）</dd>
+</dl>
+
+<h3 id="6-html-标签">6. Html 标签</h3>
+
+<p>可在 Markdown 语法中直接嵌套 Html 标签，譬如，你可以用 Html 写一个纵跨两行的表格：</p>
+
+<p>示例：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;table&gt;
+    &lt;tr&gt;
+        &lt;th rowspan="2"&gt;值班人员&lt;/th&gt;
+        &lt;th&gt;星期一&lt;/th&gt;
+        &lt;th&gt;星期二&lt;/th&gt;
+        &lt;th&gt;星期三&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;李强&lt;/td&gt;
+        &lt;td&gt;张明&lt;/td&gt;
+        &lt;td&gt;王平&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+</code></pre></div></div>
+
+<p>效果：</p>
+
+<table>
+    <tr>
+        <th rowspan="2">值班人员</th>
+        <th>星期一</th>
+        <th>星期二</th>
+        <th>星期三</th>
+    </tr>
+    <tr>
+        <td>李强</td>
+        <td>张明</td>
+        <td>王平</td>
+    </tr>
+</table>
+
+<h3 id="7-待办事项-todo-列表">7. 待办事项 Todo 列表</h3>
+
+<p>使用带有 <code class="highlighter-rouge">[ ]</code> 或 <code class="highlighter-rouge">[x]</code> (未完成或已完成) 项的列表语法撰写一个待办事项列表，并且支持子列表嵌套以及混用Markdown语法。</p>
+
+<p>示例：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- [x] **博客改版**
+    - [x] 响应式布局，移动端适配
+    - [ ] 多语言支持
+    - [x] 主页
+    - [x] 文章列表页
+    - [x] 归档页
+    - [x] 关于页
+    - [x] 文章详情页
+        - [x] 排版
+        - [x] Markdown 渲染
+        - [x] 代码高亮，使用 [Prism](https://prismjs.com/)
+        - [ ] Toc 功能
+        - [x] 评论功能
+        - [x] 打赏功能
+
+- [x] **Minimalism 主题发布**
+    - [x] 主题编写
+    - [x] 打包发布
+</code></pre></div></div>
+
+<p>效果：</p>
+
+<ul class="task-list">
+  <li class="task-list-item">
+<input type="checkbox" class="task-list-item-checkbox" disabled checked><strong>博客改版</strong>
+    <ul class="task-list">
+      <li class="task-list-item">
+<input type="checkbox" class="task-list-item-checkbox" disabled checked>响应式布局，移动端适配</li>
+      <li class="task-list-item">
+<input type="checkbox" class="task-list-item-checkbox" disabled>多语言支持</li>
+      <li class="task-list-item">
+<input type="checkbox" class="task-list-item-checkbox" disabled checked>主页</li>
+      <li class="task-list-item">
+<input type="checkbox" class="task-list-item-checkbox" disabled checked>文章列表页</li>
+      <li class="task-list-item">
+<input type="checkbox" class="task-list-item-checkbox" disabled checked>归档页</li>
+      <li class="task-list-item">
+<input type="checkbox" class="task-list-item-checkbox" disabled checked>关于页</li>
+      <li class="task-list-item">
+<input type="checkbox" class="task-list-item-checkbox" disabled checked>文章详情页
+        <ul class="task-list">
+          <li class="task-list-item">
+<input type="checkbox" class="task-list-item-checkbox" disabled checked>排版</li>
+          <li class="task-list-item">
+<input type="checkbox" class="task-list-item-checkbox" disabled checked>Markdown 渲染</li>
+          <li class="task-list-item">
+<input type="checkbox" class="task-list-item-checkbox" disabled checked>代码高亮，使用 <a href="https://prismjs.com/">Prism</a>
+</li>
+          <li class="task-list-item">
+<input type="checkbox" class="task-list-item-checkbox" disabled>Toc 功能</li>
+          <li class="task-list-item">
+<input type="checkbox" class="task-list-item-checkbox" disabled checked>评论功能</li>
+          <li class="task-list-item">
+<input type="checkbox" class="task-list-item-checkbox" disabled checked>打赏功能</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li class="task-list-item">
+<input type="checkbox" class="task-list-item-checkbox" disabled checked><strong>Minimalism 主题发布</strong>
+    <ul class="task-list">
+      <li class="task-list-item">
+<input type="checkbox" class="task-list-item-checkbox" disabled checked>主题编写</li>
+      <li class="task-list-item">
+<input type="checkbox" class="task-list-item-checkbox" disabled checked>打包发布</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="写在最后">写在最后</h2>
+
+<p>本篇博客列举的语法模板部分参考了 <a href="https://www.zybuluo.com/mdeditor?url=https%3A%2F%2Fwww.zybuluo.com%2Fstatic%2Feditor%2Fmd-help.markdown">Cmd Markdown 编辑阅读器的语法说明</a> <img class="emoji" title=":+1:" alt=":+1:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f44d.png" height="20" width="20">，感谢。</p>
+
+<hr>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:footnote1">
+      <p>这是第一个注脚的注解。 <a href="#fnref:footnote1" class="reversefootnote">↩</a></p>
+    </li>
+    <li id="fn:footnote2">
+      <p>这是第二个注脚的注解。 <a href="#fnref:footnote2" class="reversefootnote">↩</a></p>
+    </li>
+  </ol>
+</div>
+
+
+    <div class="licenses">
+      <hr>
+      <p>本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>进行许可。</p>
+    </div>
+
+    
+
+    
+
+    <script>
+      function showComment() {
+        if(document.getElementById("comment").style.display=="none") {
+          document.getElementById("comment").style.display="block";
+          document.getElementById("btn-show-comment").style.display="none";
+        }
+      }
+
+      function showReward() {
+        if (document.getElementsByClassName("reward-qr-code")[0].style.display=="none" ) {
+          document.getElementsByClassName("reward-qr-code")[0].style.display="block";
+        } else {
+          document.getElementsByClassName("reward-qr-code")[0].style.display="none";
+        }
+      }
+    </script>
+  </div>
+</div>
+
+
+    <footer><section class="copyright">
+  <p>Copyright © 2020 2M | Power by
+    <a href="https://jekyllrb.com/" target="_blank">Jekyll</a>
+     | Theme
+     <a href="https://github.com/showzeng/minimalism" target="_blank">Minimalism</a>
+  </p>
+</section>
+</footer>
+
+
+    <script src="/assets/js/prism.js"></script>
+    <script src="/assets/js/zooming.min.js"></script>
+    
+    
+    <script src="/assets/js/prism-line-numbers.js"></script>
+    
+    <script src="/assets/js/post_content_init.js"></script>
+
+    
+    
+
+    
+
+  </body>
+</html>
